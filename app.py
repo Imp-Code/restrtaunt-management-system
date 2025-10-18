@@ -17,7 +17,7 @@ app.register_blueprint(kitchen_bp)
 app.register_blueprint(stock_bp)
 
 
-app.run(debug = True)
+#app.run(debug = True)
 
 
 
