@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Management</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Stock Management</h1>
+    <div class="nav-links">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/waiter">Waiter Form</a>
+      <a href="/kitchen">Kitchen</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Current Inventory</h2>
+    <table border="1" style="width:100%; border-collapse:collapse; margin-top:20px;">
+      <tr style="background-color:#f0f0f0;">
+        <th>Id</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Status</th>
+      </tr>
+      {% for item in items %}
+      <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  
+  <div class="container">
+    <h2>add or remove items to stock</h2>
+    <form id="waiterForm" action="/update" method="POST">
+      <input name="item" type="text" placeholder="Item name / Item Id" required>
+      <input name="quantity" type="text" placeholder="quantity">
+      <input name="status" type="text" placeholder="status">
+      <select name="command" required>
+        <option value="">Select command</option>
+        <option value="remove">remove</option>
+        <option value="add">add</option>
+      </select>
+      <button type="submit">update stock</button>
+    </form>
+  </div>
+</body>
+</html>

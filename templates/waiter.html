@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waiter Form</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Waiter Station</h1>
+    <div class="nav-links">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/kitchen">Kitchen</a>
+      <a href="/stock">Stock</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Send Order to Kitchen</h2>
+    <form id="waiterForm" action="/sendtokitchen" method="POST">
+      <input name="tablenumber" type="text" placeholder="Table Number" required>
+      <textarea name="orderdetails" placeholder="Order Details" rows="5" required></textarea>
+      <select name="priority" required>
+        <option value="">Select Priority</option>
+        <option value="normal">Normal</option>
+        <option value="urgent">Urgent</option>
+      </select>
+      <button type="submit">Send to Kitchen</button>
+    </form>
+  </div>
+</body>
+</html>

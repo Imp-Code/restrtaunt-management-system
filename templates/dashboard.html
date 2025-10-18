@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Bistro Dashboard</h1>
+    <div class="nav-links">
+      <a href="/waiter">Waiter Form</a>
+      <a href="/kitchen">Kitchen</a>
+      <a href="/stock">Stock</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Welcome, Staff!</h2>
+    <p>Use this dashboard to manage restaurant operations efficiently.</p>
+    <div style="margin-top:30px;">
+      <button onclick="window.location='/waiter'">Send Waiter Form</button>
+      <button onclick="window.location='/kitchen'">View Kitchen Orders</button>
+      <button onclick="window.location='/stock'">Check Stock</button>
+    </div>
+  </div>
+</body>
+</html>
